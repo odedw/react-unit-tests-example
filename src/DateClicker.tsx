@@ -1,6 +1,8 @@
 import React from "react";
 
-const DateClicker = () => {
+interface Props {}
+
+const DateClicker: React.FC<Props> = (props) => {
   const [lastClicked, setLastClicked] = React.useState<string>(
     new Date().toLocaleTimeString()
   );
