@@ -10,12 +10,14 @@ const Counter = () => {
   return (
     <div className="counter-container">
       <div className="counter">
-        <button onClick={onClick}>Increment</button>
+        <button className="btn" onClick={onClick}>
+          Increment
+        </button>
         <div className="count">{count}</div>
       </div>
       <div>
         <span>Last Clicked: </span>
-        <span>{lastClicked.toLocaleTimeString()}</span>
+        <span className="click-date">{lastClicked.toLocaleTimeString()}</span>
       </div>
     </div>
   );
