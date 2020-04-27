@@ -3,18 +3,14 @@ import React from "react";
 const Counter = () => {
   const [count, setCount] = React.useState<number>(0);
   const [lastClicked, setLastClicked] = React.useState<Date>(new Date());
-
+  const onClick = () => {
+    setCount(count + 1);
+    setLastClicked(new Date());
+  };
   return (
-    <div>
+    <div className="counter-container">
       <div className="counter">
-        <button
-          onClick={() => {
-            setCount(count + 1);
-            setLastClicked(new Date());
-          }}
-        >
-          +
-        </button>
+        <button onClick={onClick}>Increment</button>
         <div className="count">{count}</div>
       </div>
       <div>
