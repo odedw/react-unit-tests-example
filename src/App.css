@@ -28,14 +28,18 @@ body,
   margin-left: 20px;
 }
 
-.counter-container {
+.date-clicker {
   align-items: center;
   display: flex;
-  flex-direction: column;
 }
 
-.counter button {
+.btn {
   margin-top: 5px;
   font-size: 32px;
   padding: 10px;
+}
+
+.click-date {
+  font-size: 48px;
+  margin-left: 20px;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import Counter from "./Counter";
+import DateClicker from "./DateClicker";
 
 function delay(ms = 1000 * 60 * 60) {
   return new Promise((resolve) => {
@@ -10,9 +10,9 @@ function delay(ms = 1000 * 60 * 60) {
   });
 }
 
-describe("Counter", () => {
+describe("DateClicker", () => {
   test("Should set last date clicked", async () => {
-    render(<Counter />);
+    render(<DateClicker />);
 
     fireEvent.click(document.getElementsByClassName("btn")[0]);
 
