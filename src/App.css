@@ -34,9 +34,14 @@ body,
 }
 
 .btn {
-  margin-top: 5px;
   font-size: 32px;
   padding: 10px;
+}
+.btn-black {
+  background: black;
+  font-size: 32px;
+  padding: 10px;
+  color: white;
 }
 
 .click-date {
