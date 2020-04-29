@@ -2,8 +2,6 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import DateClicker from "./DateClicker";
 
-jest.mock("./DateFactory", () => () => "SOME_DATE_STRING");
-
 function delay(ms = 1000 * 60 * 60) {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -14,7 +12,9 @@ function delay(ms = 1000 * 60 * 60) {
 
 describe("DateClicker", () => {
   test("Should set last date clicked", async () => {
-    const { getByText, getByTestId } = render(<DateClicker />);
+    const { getByText, getByTestId } = render(
+      <DateClicker getDateString={() => "SOME_DATE_STRING"} />
+    );
 
     fireEvent.click(getByText("Click Me"));
 
