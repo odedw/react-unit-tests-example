@@ -12,14 +12,14 @@ function delay(ms = 1000 * 60 * 60) {
 
 describe("DateClicker", () => {
   test("Should set last date clicked", async () => {
-    render(<DateClicker />);
+    const { getByText, getByTestId } = render(<DateClicker />);
 
-    fireEvent.click(document.getElementsByClassName("btn")[0]);
+    fireEvent.click(getByText("Click Me"));
 
     // this shows how easy it is for the test to break if the unit doesn't use stable values
     await delay(150);
 
-    const dateClicked = document.getElementsByClassName("click-date")[0];
+    const dateClicked = getByTestId("click-date");
     expect(dateClicked.innerHTML).toEqual(new Date().toLocaleTimeString());
   });
 });

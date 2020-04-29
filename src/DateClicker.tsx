@@ -14,7 +14,9 @@ const DateClicker: React.FC<Props> = (props) => {
       <button className="btn" onClick={onClick}>
         Click Me
       </button>
-      <div className="click-date">{lastClicked}</div>
+      <div data-testid="click-date" className="click-date">
+        {lastClicked}
+      </div>
     </div>
   );
 };
