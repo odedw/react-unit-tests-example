@@ -1,13 +1,12 @@
 import React from "react";
+import getDateString from "./DateFactory";
 
 interface Props {}
 
 const DateClicker: React.FC<Props> = (props) => {
-  const [lastClicked, setLastClicked] = React.useState<string>(
-    new Date().toLocaleTimeString()
-  );
+  const [lastClicked, setLastClicked] = React.useState<string>(getDateString());
   const onClick = () => {
-    setLastClicked(new Date().toLocaleTimeString());
+    setLastClicked(getDateString());
   };
   return (
     <div className="date-clicker">

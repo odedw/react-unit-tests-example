@@ -2,6 +2,8 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import DateClicker from "./DateClicker";
 
+jest.mock("./DateFactory", () => () => "SOME_DATE_STRING");
+
 function delay(ms = 1000 * 60 * 60) {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -20,6 +22,6 @@ describe("DateClicker", () => {
     await delay(150);
 
     const dateClicked = getByTestId("click-date");
-    expect(dateClicked.innerHTML).toEqual(new Date().toLocaleTimeString());
+    expect(dateClicked.innerHTML).toEqual("SOME_DATE_STRING");
   });
 });
